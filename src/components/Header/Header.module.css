@@ -1,4 +1,42 @@
-.logo {
-    width: 50px;
+.header {
+    background-color: #1E2745;
+    height: 73px;
+    color: #8C91B6;
     display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+
+.logo img {
+    align-self: center;
+    width: 50px;
+    height: 50px;
+}
+
+.logo div {
+    align-self: center;
+    font-size: 2em;
+    margin-left: 10px;
+}
+
+.reg_log_block {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+}
+
+.login {
+    align-self: center;
+}
+
+.register {
+    align-self: center;
+    margin-left: 10px;
+}
+

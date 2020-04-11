@@ -3,9 +3,15 @@ import Style from "./Header.module.css";
 
 const Header = () => {
     return(
-
-        <header>
-            <img className={Style.logo} src="https://avatars.mds.yandex.net/get-pdb/933338/94068ff5-61aa-43bd-909a-a47aade07a8b/s1200?webp=false" alt="logo"/>
+        <header className={Style.header}>
+            <div className={Style.logo}>
+                <img src="https://iqonic.design/themes/socialv/html-dark/images/logo.png" alt="logo"/>
+                <div>Cicada</div>
+            </div>
+            <div className={Style.reg_log_block}>
+                <div className={Style.login}>Логин</div>
+                <div className={Style.register}>Регистрация</div>
+            </div>
         </header>
     );
 };
