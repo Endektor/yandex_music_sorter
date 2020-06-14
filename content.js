@@ -6,22 +6,23 @@ if (document.location.href.slice(8,20) == "music.yandex") {
 	
 	function Scan (names, songs) {
 		songs = document.getElementsByClassName("d-track_in-lib");
-		for (var i = 0; i < songs.length; i++) {
+		for (let i = 0; i < songs.length; i++) {
 			song_id = songs[i].getElementsByClassName("d-track__id")[0].textContent;
 			names[song_id] = songs[i].getElementsByClassName("d-track__title")[0].text;
 		}
 		songs[songs.length - 1].scrollIntoView();
-		if (window.pageYOffset == 100) {clearInterval(timer1)}
-		console.log(names.length);
+		if (window.pageYOffset - document.body.scrollHeight + document.body.offsetHeight == 0) {clearInterval(timer1)} //останавливает проверку когда страница в самом низу
+		//Может некорректно работать для большиф стриниц, которые подгружаются в зесколько заходов
+		console.log(names);
 	}
 	
 	
 	window.scrollTo(0, 0);
-	var songs = [];
-	var names = [];
+	let songs = [];
+	let names = [];
 	let timer1 = setInterval(Scan, 2000, names, songs);
-	var names_counter = [];
-	var second_counter = [];
+	let names_counter = [];
+	let second_counter = [];
 
 	
 	for (i in names) {
@@ -31,7 +32,7 @@ if (document.location.href.slice(8,20) == "music.yandex") {
 			(names_counter[names[i]] = 1)
 		}
 	}
-	for (var i = 0; i < songs.length; i++) {
+	for (let i = 0; i < songs.length; i++) {
 		if (names_counter[names[i]] > 1){
 			if (second_counter[names[i]] != undefined) {
 				songs[i].style.backgroundColor="red";
